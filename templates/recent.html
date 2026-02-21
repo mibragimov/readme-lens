@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recent scans · README Lens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <main class="max-w-5xl mx-auto px-6 py-14">
+      <div class="flex items-center justify-between">
+        <h1 class="text-3xl font-semibold">Recent scans</h1>
+        <a href="/" class="text-slate-400 hover:text-slate-200">New scan</a>
+      </div>
+
+      <div class="mt-8 overflow-x-auto bg-slate-900/40 border border-slate-800 rounded-2xl">
+        <table class="min-w-full text-sm">
+          <thead class="text-slate-400">
+            <tr>
+              <th class="text-left p-4">Repo</th>
+              <th class="text-left p-4">Branch</th>
+              <th class="text-left p-4">SHA</th>
+              <th class="text-left p-4">Scanned at (unix)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            {% for r in rows %}
+              <tr>
+                <td class="p-4"><a class="text-indigo-300 hover:text-indigo-200" href="https://github.com/{{ r['owner'] }}/{{ r['repo'] }}" target="_blank">{{ r['owner'] }}/{{ r['repo'] }}</a></td>
+                <td class="p-4 text-slate-200">{{ r['branch'] }}</td>
+                <td class="p-4"><code class="text-slate-200">{{ r['sha'][:7] }}</code></td>
+                <td class="p-4 text-slate-400">{{ r['scanned_at'] }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-6 text-xs text-slate-500">
+        This is local server history (SQLite). It’s mainly here to prove caching + persistence.
+      </p>
+    </main>
+  </body>
+</html>
