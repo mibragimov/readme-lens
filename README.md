@@ -1,0 +1,20 @@
+# README Lens
+
+Paste a GitHub repo URL → get a documentation/onboarding readiness report + generated `ONBOARDING.md`.
+
+## Local dev
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload
+```
+
+Open http://127.0.0.1:8000
+
+## Deploy (Render)
+
+This repo includes a `render.yaml`. Create a new Render Blueprint from this repo.
+

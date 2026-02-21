@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>README Lens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <main class="max-w-3xl mx-auto px-6 py-14">
+      <header class="mb-10">
+        <h1 class="text-4xl font-semibold tracking-tight">README Lens</h1>
+        <p class="mt-3 text-slate-300">
+          Paste a GitHub repo URL. Get an onboarding / documentation readiness report and a generated <code class="text-slate-200">ONBOARDING.md</code>.
+        </p>
+      </header>
+
+      <section class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6">
+        <form method="post" action="/scan" class="space-y-4">
+          <label class="block">
+            <span class="text-sm text-slate-300">GitHub repository URL</span>
+            <input
+              name="repo_url"
+              type="url"
+              required
+              placeholder="{{ example }}"
+              class="mt-2 w-full rounded-xl bg-slate-950 border border-slate-800 px-4 py-3 outline-none focus:border-slate-500"
+            />
+          </label>
+          <button
+            type="submit"
+            class="rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white px-5 py-3 font-medium"
+          >
+            Scan repo
+          </button>
+        </form>
+
+        <p class="mt-4 text-xs text-slate-400">
+          Works best for public repos. Scans only the default branch.
+        </p>
+      </section>
+
+      <footer class="mt-10 text-sm text-slate-500">
+        <a href="/about" class="hover:text-slate-300">About</a>
+      </footer>
+    </main>
+  </body>
+</html>
