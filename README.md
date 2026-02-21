@@ -2,6 +2,14 @@
 
 Paste a GitHub repo URL → get a documentation/onboarding readiness report + generated `ONBOARDING.md`.
 
+Live demo: (set after deploy)
+
+## What it checks
+
+- Core community/docs files (LICENSE, CONTRIBUTING, SECURITY, CHANGELOG)
+- `.env.example` presence
+- README headings for common sections (Installation/Usage/Config/Tests/etc)
+
 ## Local dev
 
 ```bash
